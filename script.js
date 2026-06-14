@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     
+    // --- 0. LOGIQUE DU SÉLECTEUR DE THÈME (SOMBRE / CLAIR) ---
+    const themeToggle = document.querySelector(".theme-toggle");
+    const currentTheme = localStorage.getItem("theme");
+
+    // Vérifie si l'utilisateur avait déjà choisi le thème clair
+    if (currentTheme === "light") {
+        document.body.classList.add("light-theme");
+    }
+
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        
+        // Sauvegarde la préférence dans le navigateur
+        if (document.body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light");
+        } else {
+            localStorage.setItem("theme", "dark");
+        }
+    });
+
     // --- 1. SECTIONS ET TRANSITIONS DE PAGES (SPA) ---
     const links = document.querySelectorAll(".nav-link, .logo");
     links.forEach(link => {
