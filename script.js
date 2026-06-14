@@ -1,18 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- 0. LOGIQUE DU SÉLECTEUR DE THÈME (SOMBRE / CLAIR) ---
+    // --- 0. SÉLECTEUR DE THÈME ---
     const themeToggle = document.querySelector(".theme-toggle");
     const currentTheme = localStorage.getItem("theme");
 
-    // Vérifie si l'utilisateur avait déjà choisi le thème clair
     if (currentTheme === "light") {
         document.body.classList.add("light-theme");
     }
 
     themeToggle.addEventListener("click", () => {
         document.body.classList.toggle("light-theme");
-        
-        // Sauvegarde la préférence dans le navigateur
         if (document.body.classList.contains("light-theme")) {
             localStorage.setItem("theme", "light");
         } else {
@@ -20,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- 1. SECTIONS ET TRANSITIONS DE PAGES (SPA) ---
+    // --- 1. SPA ROUTING ET TRANSITIONS (GSAP) ---
     const links = document.querySelectorAll(".nav-link, .logo");
     links.forEach(link => {
         link.addEventListener("click", (e) => {
@@ -43,12 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- 2. GESTION DU MENU MOBILE ---
+    // --- 2. MENU MOBILE ---
     document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".nav-menu").classList.toggle("open");
     });
 
-    // --- 3. LOGIQUE DU CURSEUR PERSONNALISÉ ---
+    // --- 3. LOGIQUE DU TEXTE CURSEUR INTERACTIF ---
     const cursor = document.querySelector(".custom-cursor");
     document.addEventListener("mousemove", (e) => {
         gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
@@ -59,19 +56,37 @@ document.addEventListener("DOMContentLoaded", () => {
         el.addEventListener("mouseleave", () => { cursor.style.width = "8px"; cursor.style.height = "8px"; });
     });
 
-    // --- 4. ACCORDÉON INTERACTIF (PROJETS / SAÉ) ---
+    // --- 4. CHARGEMENT DYNAMIQUE DU SCRIPT PYTHON (DEPUIS LA RACINE) ---
+    const codePreview = document.getElementById("code-bdd-preview");
+    if (codePreview) {
+        fetch("SAE BDD.py")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Impossible de récupérer le fichier SAE BDD.py");
+                }
+                return response.text();
+            })
+            .then(data => {
+                // On remplace le texte de chargement par le vrai contenu du fichier .py
+                codePreview.textContent = data;
+            })
+            .catch(error => {
+                codePreview.textContent = "# Erreur lors du chargement du script :\n# Vérifiez que le fichier 'SAE BDD.py' est bien placé à la racine.";
+                console.error(error);
+            });
+    }
+
+    // --- 5. ACCORDÉONS PROJETS INTERACTIFS ---
     const projectItems = document.querySelectorAll(".toggle-project");
     projectItems.forEach(item => {
         item.addEventListener("click", (e) => {
-            // Empêche la fermeture involontaire si on clique sur le bouton plein écran ou l'iframe
-            if (e.target.closest('.btn-fullscreen') || e.target.tagName === 'A' || e.target.tagName === 'IFRAME') {
+            if (e.target.closest('.btn-fullscreen') || e.target.tagName === 'A' || e.target.tagName === 'IFRAME' || e.target.closest('pre')) {
                 return;
             }
 
             if (item.classList.contains("open")) {
                 item.classList.remove("open");
             } else {
-                // Ferme l'autre volet si ouvert, puis affiche l'actuel
                 projectItems.forEach(otherItem => otherItem.classList.remove("open"));
                 item.classList.add("open");
             }
