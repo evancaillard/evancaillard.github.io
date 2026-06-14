@@ -478,6 +478,87 @@ body.light-theme .image-wrapper {
     fill: currentColor;
 }
 
+/* --- SECTION CONTACT --- */
+.contact-container {
+    width: 100%;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.contact-link:hover {
+    padding-left: 1rem;
+    border-color: var(--text-color);
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.contact-value {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.contact-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 1.5rem 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    font-family: var(--font-sans);
+}
+
+.linkedin-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.02);
+}
+
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
 /* --- MEDIA QUERIES RESPONSIVE --- */
 @media (max-width: 992px) {
     .header { padding: 2rem; }
@@ -486,6 +567,9 @@ body.light-theme .image-wrapper {
     .grid-text { grid-template-columns: 1fr; gap: 3rem; }
     .section-title { font-size: 2.5rem; margin-bottom: 2rem; }
     .hero-title { font-size: 14vw; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-value { font-size: 1.4rem; }
+    .linkedin-btn { padding: 1.2rem 2rem; width: 100%; justify-content: center; }
     
     .menu-toggle { display: flex; }
     .nav-menu {
