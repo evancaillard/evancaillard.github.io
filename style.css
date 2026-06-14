@@ -1,8 +1,8 @@
 /* --- VARIABLES & FONTS --- */
 :root {
     --bg-color: #0a0a0a;
-    --text-color: #ffffff; /* Tout blanc */
-    --font-sans: 'Inter', sans-serif; /* Police unique pour tout le site */
+    --text-color: #ffffff;
+    --font-sans: 'Inter', sans-serif; /* Police unifiée pour tout le site */
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -64,7 +64,7 @@ body {
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.5); /* Blanc estompé par défaut pour le contraste */
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -76,7 +76,7 @@ body {
 }
 
 .nav-link:hover, .nav-link.active {
-    color: var(--text-color); /* Blanc pur */
+    color: var(--text-color);
 }
 
 .nav-link::after {
@@ -171,7 +171,7 @@ body {
     padding-left: 12px;
 }
 
-/* --- TYPOGRAPHIE ET MISES EN PAGE DES SECTIONS --- */
+/* --- DISPOSITION GLOBALE ET TEXTES CONTENU --- */
 .section-title {
     font-family: var(--font-sans);
     font-size: 3rem;
@@ -188,7 +188,6 @@ body {
     gap: 6rem;
 }
 
-/* Style de ton texte de présentation */
 .main-profile .lead-text {
     font-family: var(--font-sans);
     color: var(--text-color);
@@ -207,18 +206,17 @@ body {
     font-weight: 300;
 }
 
-/* Style de ton titre de droite // Passion & Curiosité */
 .interest-title {
     font-family: var(--font-sans);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-color); /* Blanc pur */
+    color: var(--text-color);
     margin-bottom: 1.2rem;
     font-weight: 600;
 }
 
-/* --- PROJETS STYLE --- */
+/* --- PROJETS STYLE (ACCORDÉON INTERACTIF) --- */
 .projects-list {
     display: flex;
     flex-direction: column;
@@ -227,14 +225,23 @@ body {
 
 .project-item {
     display: flex;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    transition: 0.6s;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    transition: var(--transition-smooth);
 }
 
-.project-item:hover {
-    padding-left: 1.5rem;
-    border-bottom-color: rgba(255,255,255,1);
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+    width: 100%;
+}
+
+.project-item:hover .project-header {
+    padding-left: 1rem;
 }
 
 .project-num {
@@ -243,6 +250,10 @@ body {
     font-weight: 600;
     margin-right: 4rem;
     color: var(--text-color);
+}
+
+.project-details {
+    flex-grow: 1;
 }
 
 .project-details h3 {
@@ -258,6 +269,57 @@ body {
     color: var(--text-color);
     font-size: 0.95rem;
     font-weight: 300;
+    line-height: 1.6;
+    max-width: 85%;
+}
+
+.project-arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+}
+
+.project-item.open .project-arrow {
+    transform: rotate(180deg);
+}
+
+.project-preview {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-item.open .project-preview {
+    max-height: 800px;
+    opacity: 1;
+    visibility: visible;
+    padding-bottom: 3rem;
+}
+
+.image-wrapper {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.sae-img {
+    width: 100%;
+    display: block;
+    height: auto;
 }
 
 /* --- CV STYLE --- */
