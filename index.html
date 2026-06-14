@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan Caillard | Portfolio</title>
-    <!-- Chargement exclusif de la police Google Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -33,7 +32,6 @@
 
     <main class="content-container">
 
-        <!-- SECTION ACCUEIL -->
         <section id="home" class="section active">
             <div class="hero-wrapper">
                 <h1 class="hero-title">Evan</h1>
@@ -41,7 +39,6 @@
             </div>
         </section>
 
-        <!-- SECTION À PROPOS -->
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">À propos de moi</h2>
@@ -58,41 +55,58 @@
             </div>
         </section>
 
-        <!-- SECTION PROJETS -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Projets</h2>
                 <div class="projects-list">
-                    <div class="project-item">
-                        <span class="project-num">01</span>
-                        <div class="project-details">
-                            <h3>Nom du Projet</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Details du projet et technologies utilisées.</p>
+                    
+                    <div class="project-item toggle-project">
+                        <div class="project-header">
+                            <span class="project-num">01</span>
+                            <div class="project-details">
+                                <h3>SAÉ : Gestion de fichiers</h3>
+                                <p>Cette SAÉ demande de concevoir un script en Python pour traiter et nettoyer un jeu de données JSON sur la pollution de l'air à Poitiers. L'objectif principal est de transformer ce fichier initial pour l'exporter au format CSV en utilisant le point-virgule comme séparateur. Lors de cette conversion, le script doit filtrer les données pour ne conserver que les lignes complètes et adapter le format des dates aux standards français. Enfin, le fichier final devra respecter des contraintes de codage spécifiques pour garantir sa parfaite lisibilité lors d'une ouverture sous Excel.</p>
+                            </div>
+                            <div class="project-arrow">
+                                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                            </div>
+                        </div>
+                        
+                        <div class="project-preview">
+                            <div class="image-wrapper">
+                                <img src="image_2c65c0.jpg" alt="Script Python - Gestion de fichiers" class="sae-img">
+                            </div>
                         </div>
                     </div>
-                    <div class="project-item">
-                        <span class="project-num">02</span>
-                        <div class="project-details">
-                            <h3>Nom du Projet</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+
+                    <div class="project-item toggle-project">
+                        <div class="project-header">
+                            <span class="project-num">02</span>
+                            <div class="project-details">
+                                <h3>Prochaine SAÉ</h3>
+                                <p>Envoie-moi le texte et l'image de ta deuxième SAÉ quand tu le souhaites, et je l'ajouterai directement ici.</p>
+                            </div>
+                            <div class="project-arrow">
+                                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                            </div>
                         </div>
+                        <div class="project-preview">
+                            </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- SECTION BILAN PERSONNEL -->
         <section id="bilan" class="section">
             <div class="container">
                 <h2 class="section-title">Bilan Personnel</h2>
                 <div class="grid-text">
-                    <!-- Colonne principale (Gauche) -->
                     <div class="main-profile">
                         <p class="lead-text">Ma première année en BUT Science des données à Niort a été une étape clé pour poser les fondations de mon profil technique. Entre la théorie des cours et la pratique des projets, cette année m'a permis de passer de la simple curiosité à la maîtrise de mes premiers outils d'analyse.</p>
                         <p style="margin-bottom: 1.8rem;">Sur le plan technique, j'ai développé des compétences en programmation et en manipulation de données, notamment à travers l'apprentissage de bases de données et de langages clés du secteur. Au-delà des chiffres, cette formation m'a appris à nettoyer, structurer et interpréter la donnée pour la rendre lisible et utile.</p>
                         <p>Ce cursus m'a également poussé à développer mon autonomie et mon esprit d'équipe, notamment lors des SAÉ (Situations d'Apprentissage et d'Évaluation) où nous devions résoudre des problématiques concrètes en groupe, souvent sous forme de gestion de projet.</p>
                     </div>
-                    <!-- Colonne secondaire (Droite) -->
                     <div class="side-passion">
                         <p class="interest-title">// Conclusion & Perspectives</p>
                         <p>Aujourd'hui, je dresse un bilan très positif de cette première année : elle a confirmé mon intérêt pour ce domaine et m'a donné toutes les clés nécessaires pour aborder la deuxième année avec ambition, notamment dans mes projets personnels liés à la data dans le football.</p>
@@ -101,7 +115,6 @@
             </div>
         </section>
 
-        <!-- SECTION CV -->
         <section id="cv" class="section">
             <div class="container cv-container">
                 <h2 class="section-title">Curriculum Vitae</h2>
