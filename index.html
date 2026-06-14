@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan Caillard | Portfolio</title>
+    <!-- Chargement exclusif de la police Google Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,7 +15,14 @@
     <div class="custom-cursor"></div>
 
     <header class="header">
-        <div class="logo" data-target="home">E.</div>
+        <div class="header-left">
+            <div class="logo" data-target="home">E.</div>
+            <!-- Bouton de bascule de thème -->
+            <button class="theme-toggle" aria-label="Changer de thème">
+                <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zM7.05 18.01l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.02-.39-1.41 0z"/></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12.3 2c4.2 0 7.8 2.8 8.9 6.7c.1.5-.2 1-.7 1.1c-.1 0-.2 0-.3 0c-.4-.1-.7-.3-.8-.7c-.8-2.7-3.3-4.5-6.2-4.5c-3.6 0-6.5 2.9-6.5 6.5s2.9 6.5 6.5 6.5c2.9 0 5.4-1.8 6.2-4.5c.1-.4.5-.7.9-.6c.5.1.8.5.7 1c-1.1 3.9-4.7 6.7-8.9 6.7C6.6 22 2 17.4 2 11.8C2 6.2 6.6 2 12.3 2z"/></svg>
+            </button>
+        </div>
         <button class="menu-toggle" aria-label="Ouvrir le menu">
             <span></span>
             <span></span>
@@ -32,6 +40,7 @@
 
     <main class="content-container">
 
+        <!-- SECTION ACCUEIL -->
         <section id="home" class="section active">
             <div class="hero-wrapper">
                 <h1 class="hero-title">Evan</h1>
@@ -39,6 +48,7 @@
             </div>
         </section>
 
+        <!-- SECTION À PROPOS -->
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">À propos de moi</h2>
@@ -55,11 +65,13 @@
             </div>
         </section>
 
+        <!-- SECTION PROJETS -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Projets</h2>
                 <div class="projects-list">
                     
+                    <!-- SAÉ 1 : Gestion de fichiers -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">01</span>
@@ -79,6 +91,7 @@
                         </div>
                     </div>
 
+                    <!-- SAÉ 2 : Création d’un reporting -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">02</span>
@@ -125,9 +138,12 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
             </div>
         </section>
 
+        <!-- SECTION BILAN PERSONNEL -->
         <section id="bilan" class="section">
             <div class="container">
                 <h2 class="section-title">Bilan Personnel</h2>
@@ -145,11 +161,12 @@
             </div>
         </section>
 
+        <!-- SECTION CV -->
         <section id="cv" class="section">
             <div class="container cv-container">
                 <h2 class="section-title">Curriculum Vitae</h2>
                 <p class="cv-text">Consultez ou téléchargez mon parcours académique et professionnel mis à jour.</p>
-                <a href="https://github.com/evancaillard/evancaillard.github.io/raw/main/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ton-pseudo/ton-pseudo.github.io/raw/main/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
                     <span>Télécharger le CV</span>
                     <svg viewBox="0 0 24 24" class="arrow-icon"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
                 </a>
