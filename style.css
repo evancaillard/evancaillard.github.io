@@ -20,7 +20,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-sans);
-    overflow: hidden; /* Évite les barres de défilement pour l'effet SPA web */
+    overflow: hidden; /* Fixe l'écran pour l'expérience SPA sans défilement de page standard */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -163,10 +163,10 @@ body {
 .hero-subtitle {
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 10px; /* Espacement large style luxe */
+    letter-spacing: 10px; /* Grand espacement élégant */
     color: var(--text-muted);
     margin-top: 2rem;
-    padding-left: 10px; /* Aligne parfaitement le texte centré malgré le letter-spacing */
+    padding-left: 10px; /* Compense le décalage provoqué par l'espacement pour un centrage parfait */
 }
 
 /* --- CONFIGURATION DES PAGES --- */
@@ -301,5 +301,5 @@ body {
     .nav-menu.open { right: 0; }
     .nav-menu ul { flex-direction: column; align-items: center; gap: 2.5rem; }
     .nav-link { font-size: 1.2rem; }
-    .custom-cursor { display: none; } /* Enlever le curseur sur mobile */
+    .custom-cursor { display: none; } /* On retire le curseur sur mobile/tablette */
 }
