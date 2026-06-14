@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectItems = document.querySelectorAll(".toggle-project");
     projectItems.forEach(item => {
         item.addEventListener("click", (e) => {
-            // Ne fait rien si l'utilisateur clique sur un lien direct
-            if (e.target.tagName === 'A') return;
+            // Ne ferme pas l'accordéon si on clique directement sur l'iframe du PDF
+            if (e.target.tagName === 'A' || e.target.tagName === 'IFRAME') return;
 
             if (item.classList.contains("open")) {
                 item.classList.remove("open");
