@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // --- 1. GESTION DES SECTIONS & ANIMATIONS (SPA) ---
     const links = document.querySelectorAll(".nav-link, .logo");
-    const sections = document.querySelectorAll(".section");
 
     links.forEach(link => {
         link.addEventListener("click", (e) => {
@@ -11,14 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetSection = document.getElementById(targetId);
 
             if (!targetSection.classList.contains("active")) {
-                // Éteindre l'ancienne section active
                 const currentSection = document.querySelector(".section.active");
                 
-                // Animation de sortie avec GSAP
+                // Animation de fondu et déplacement vers le haut pour la section sortante
                 gsap.to(currentSection, { opacity: 0, y: -20, duration: 0.4, onComplete: () => {
                     currentSection.classList.remove("active");
                     
-                    // Préparer et animer l'entrée de la nouvelle section
+                    // Transition d'entrée de la nouvelle section (venant du bas)
                     targetSection.classList.add("active");
                     gsap.fromTo(targetSection, 
                         { opacity: 0, y: 20 },
@@ -26,18 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     );
                 }});
 
-                // Mettre à jour les classes actives du menu
+                // Mise à jour de la classe active sur les liens du menu
                 document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));
                 const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
                 if (activeLink) activeLink.classList.add("active");
             }
 
-            // Fermer le menu mobile si ouvert
+            // Fermeture automatique du menu mobile lors d'un clic
             document.querySelector(".nav-menu").classList.remove("open");
         });
     });
 
-    // --- 2. MENU MOBILE ---
+    // --- 2. MENU MOBILE TOGGLE ---
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
 
@@ -46,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // --- 3. CURSEUR PERSONNALISÉ ---
+    // --- 3. CURSEUR UI PERSONNALISÉ ---
     const cursor = document.querySelector(".custom-cursor");
     
     document.addEventListener("mousemove", (e) => {
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Effet au survol des éléments cliquables
+    // Agrandissement du curseur au survol des boutons ou éléments cliquables
     const interactiveElements = document.querySelectorAll("a, button, .logo, .project-item");
     interactiveElements.forEach(el => {
         el.addEventListener("mouseenter", () => {
@@ -70,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- 4. ANIMATION D'ENTRÉE INITIALE (HOME) ---
+    // --- 4. ANIMATION D'ENTRÉE INITIALE AU CHARGEMENT DE L'ACCUEIL ---
     gsap.from(".hero-title", { opacity: 0, y: 50, duration: 1.2, ease: "power4.out", delay: 0.2 });
     gsap.from(".hero-subtitle", { opacity: 0, duration: 1.5, delay: 0.8 });
     gsap.from(".header", { opacity: 0, y: -20, duration: 1, delay: 0.5 });
