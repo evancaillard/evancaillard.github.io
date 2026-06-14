@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evan | Portfolio</title>
+    <!-- Google Fonts: Cormorant Garamond (Serif Luxe) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor (Subtile touche UI) -->
+    <div class="custom-cursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="logo" data-target="home">E.</div>
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home" class="nav-link active" data-target="home">Accueil</a></li>
+                <li><a href="#about" class="nav-link" data-target="about">À propos</a></li>
+                <li><a href="#projects" class="nav-link" data-target="projects">Projets</a></li>
+                <li><a href="#bilan" class="nav-link" data-target="bilan">Bilan Personnel</a></li>
+                <li><a href="#cv" class="nav-link" data-target="cv">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="content-container">
+
+        <!-- 1. ACCUEIL -->
+        <section id="home" class="section active">
+            <div class="hero-wrapper">
+                <h1 class="hero-title">Evan</h1>
+                <p class="hero-subtitle">Portfolio / Études & Créations</p>
+            </div>
+        </section>
+
+        <!-- 2. À PROPOS -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="grid-text">
+                    <p class="lead-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROJETS -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projets</h2>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <span class="project-num">01</span>
+                        <div class="project-details">
+                            <h3>Nom du Projet</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Details du projet et technologies utilisées.</p>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-num">02</span>
+                        <div class="project-details">
+                            <h3>Nom du Projet</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BILAN PERSONNEL -->
+        <section id="bilan" class="section">
+            <div class="container">
+                <h2 class="section-title">Bilan Personnel</h2>
+                <div class="grid-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac erat sem. Integer tristique volutpat feugiat. Cras non ex vel risus elementum tempor. In ac lorem tristique, elementum lorem vel, dictum ante.</p>
+                    <p>Nam cursus convallis mollis. Facilisis sed, varius eu tellus. Phasellus non orci sit amet orci dictum varius eget vel magna. Mauris ut finibus nunc, non feugiat lacus.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CV -->
+        <section id="cv" class="section">
+            <div class="container cv-container">
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <p class="cv-text">Consultez ou téléchargez mon parcours académique et professionnel mis à jour.</p>
+                <!-- Remplace cette URL par le lien vers ton PDF plus tard -->
+                <a href="https://github.com/votre-utilisateur/votre-depot/raw/main/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
+                    <span>Télécharger le CV</span>
+                    <svg viewBox="0 0 24 24" class="arrow-icon"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GSAP (Pour les animations haut de gamme) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Script JS principal -->
+    <script src="script.js"></script>
+</body>
+</html>
