@@ -2,8 +2,22 @@
 :root {
     --bg-color: #0a0a0a;
     --text-color: #ffffff;
-    --font-sans: 'Inter', sans-serif; /* Police unifiée pour tout le site */
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --btn-border: rgba(255, 255, 255, 0.3);
+    --btn-hover-bg: rgba(255, 255, 255, 0.1);
+    --font-sans: 'Inter', sans-serif;
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THEME CLAIR --- */
+body.light-theme {
+    --bg-color: #ffffff;
+    --text-color: #0a0a0a;
+    --text-muted: rgba(10, 10, 10, 0.6);
+    --border-color: rgba(10, 10, 10, 0.15);
+    --btn-border: rgba(10, 10, 10, 0.3);
+    --btn-hover-bg: rgba(10, 10, 10, 0.05);
 }
 
 /* --- RESET & BASE --- */
@@ -19,6 +33,7 @@ body {
     font-family: var(--font-sans);
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* --- CUSTOM CURSOR --- */
@@ -32,7 +47,7 @@ body {
     z-index: 9999;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s;
+    transition: width 0.3s, height 0.3s, background-color 0.5s ease;
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -48,6 +63,12 @@ body {
     z-index: 100;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .logo {
     font-family: var(--font-sans);
     font-size: 1.8rem;
@@ -57,6 +78,37 @@ body {
     letter-spacing: -1px;
 }
 
+/* BOUTON SWITCH THÈME */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+}
+
+.theme-toggle:hover {
+    background: var(--btn-hover-bg);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-color);
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Gestion de l'affichage des icônes Lune/Soleil */
+body.light-theme .sun-icon { opacity: 0; transform: rotate(90deg); }
+body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
+
 .nav-menu ul {
     display: flex;
     list-style: none;
@@ -64,7 +116,7 @@ body {
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-muted);
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -226,7 +278,7 @@ body {
 .project-item {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     overflow: hidden;
     transition: var(--transition-smooth);
@@ -306,39 +358,29 @@ body {
     padding-bottom: 3rem;
 }
 
-.image-wrapper {
+/* --- STRUCTURE PDF ET BOUTONS CONFIGURÉS --- */
+.pdf-container-wrapper {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    overflow-y: auto;
-    max-height: 520px;
 }
 
-.sae-img {
-    width: 100%;
-    display: block;
-    height: auto;
-}
-
-/* --- BOUTON EN GRAND POUR LE PDF --- */
 .pdf-actions {
-    max-width: 700px;
-    margin: 0 auto 1rem auto;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 1rem;
 }
 
-.btn-fullscreen {
+a.btn-fullscreen, a.btn-fullscreen:visited {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: var(--text-color);
+    border: 1px solid var(--btn-border);
+    color: var(--text-color) !important;
     padding: 0.6rem 1.2rem;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -348,25 +390,41 @@ body {
     font-weight: 400;
 }
 
-.btn-fullscreen:hover {
+a.btn-fullscreen:hover {
     border-color: var(--text-color);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--btn-hover-bg);
 }
 
 .fullscreen-icon {
     width: 14px;
     height: 14px;
-    fill: currentColor;
+    fill: var(--text-color);
 }
 
-/* Lecteur PDF spécifique défilable */
+.image-wrapper {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #111111;
+}
+
+body.light-theme .image-wrapper {
+    background: #f5f5f5;
+}
+
+.sae-img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
 .sae-pdf {
     width: 100%;
     height: 500px;
     display: block;
     background: #ffffff;
     border: none;
-    border-radius: 4px;
 }
 
 /* --- CV STYLE --- */
@@ -387,7 +445,7 @@ body {
     align-items: center;
     gap: 15px;
     background: transparent;
-    border: 1px solid rgba(255,255,255,1);
+    border: 1px solid var(--text-color);
     color: var(--text-color);
     padding: 1.2rem 2.5rem;
     text-decoration: none;
@@ -414,6 +472,7 @@ body {
 /* --- RESPONSIVE --- */
 @media (max-width: 992px) {
     .header { padding: 2rem; }
+    .header-left { gap: 1rem; }
     .section { padding: 8rem 2rem 2rem 2rem; }
     .grid-text { grid-template-columns: 1fr; gap: 3rem; }
     .section-title { font-size: 2.5rem; margin-bottom: 2rem; }
