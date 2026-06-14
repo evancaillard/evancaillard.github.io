@@ -56,22 +56,38 @@ document.addEventListener("DOMContentLoaded", () => {
         el.addEventListener("mouseleave", () => { cursor.style.width = "8px"; cursor.style.height = "8px"; });
     });
 
-    // --- 4. CHARGEMENT DYNAMIQUE DU SCRIPT PYTHON (DEPUIS LA RACINE) ---
-    const codePreview = document.getElementById("code-bdd-preview");
-    if (codePreview) {
-        fetch("SAE BDD.py")
+    // --- 4. CHARGEMENT DYNAMIQUE DES SCRIPTS PYTHON (DEPUIS LA RACINE) ---
+    
+    // Chargement SAÉ 01 : Gestion de fichiers
+    const codeGestionPreview = document.getElementById("code-gestion-preview");
+    if (codeGestionPreview) {
+        fetch("sae gestion.py")
             .then(response => {
-                if (!response.ok) {
-                    throw new Error("Impossible de récupérer le fichier SAE BDD.py");
-                }
+                if (!response.ok) throw new Error("Impossible de récupérer sae gestion.py");
                 return response.text();
             })
             .then(data => {
-                // On remplace le texte de chargement par le vrai contenu du fichier .py
-                codePreview.textContent = data;
+                codeGestionPreview.textContent = data;
             })
             .catch(error => {
-                codePreview.textContent = "# Erreur lors du chargement du script :\n# Vérifiez que le fichier 'SAE BDD.py' est bien placé à la racine.";
+                codeGestionPreview.textContent = "# Erreur lors du chargement du script :\n# Vérifiez que le fichier 'sae gestion.py' est bien placé à la racine.";
+                console.error(error);
+            });
+    }
+
+    // Chargement SAÉ 03 : Conception & Implémentation BDD
+    const codeBddPreview = document.getElementById("code-bdd-preview");
+    if (codeBddPreview) {
+        fetch("SAE BDD.py")
+            .then(response => {
+                if (!response.ok) throw new Error("Impossible de récupérer SAE BDD.py");
+                return response.text();
+            })
+            .then(data => {
+                codeBddPreview.textContent = data;
+            })
+            .catch(error => {
+                codeBddPreview.textContent = "# Erreur lors du chargement du script :\n# Vérifiez que le fichier 'SAE BDD.py' est bien placé à la racine.";
                 console.error(error);
             });
     }
