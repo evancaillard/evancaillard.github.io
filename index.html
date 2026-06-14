@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan Caillard | Portfolio</title>
-    <!-- Chargement exclusif de la police Google Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -17,7 +16,6 @@
     <header class="header">
         <div class="header-left">
             <div class="logo" data-target="home">E.</div>
-            <!-- Bouton de bascule de thème -->
             <button class="theme-toggle" aria-label="Changer de thème">
                 <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zM7.05 18.01l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.02-.39-1.41 0z"/></svg>
                 <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12.3 2c4.2 0 7.8 2.8 8.9 6.7c.1.5-.2 1-.7 1.1c-.1 0-.2 0-.3 0c-.4-.1-.7-.3-.8-.7c-.8-2.7-3.3-4.5-6.2-4.5c-3.6 0-6.5 2.9-6.5 6.5s2.9 6.5 6.5 6.5c2.9 0 5.4-1.8 6.2-4.5c.1-.4.5-.7.9-.6c.5.1.8.5.7 1c-1.1 3.9-4.7 6.7-8.9 6.7C6.6 22 2 17.4 2 11.8C2 6.2 6.6 2 12.3 2z"/></svg>
@@ -40,7 +38,6 @@
 
     <main class="content-container">
 
-        <!-- SECTION ACCUEIL -->
         <section id="home" class="section active">
             <div class="hero-wrapper">
                 <h1 class="hero-title">Evan</h1>
@@ -48,7 +45,6 @@
             </div>
         </section>
 
-        <!-- SECTION À PROPOS -->
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">À propos de moi</h2>
@@ -65,19 +61,17 @@
             </div>
         </section>
 
-        <!-- SECTION PROJETS -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Projets</h2>
                 <div class="projects-list">
                     
-                    <!-- SAÉ 1 : Gestion de fichiers -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">01</span>
                             <div class="project-details">
                                 <h3>SAÉ : Gestion de fichiers</h3>
-                                <p>Cette SAÉ demande de concevoir un script en Python pour traiter et nettoyer un jeu de données JSON sur la pollution de l'air à Poitiers. L'objectif principal est de transformer ce fichier initial pour l'exporter au format CSV en utilisant le point-virgule comme séparateur. Lors de cette conversion, le script doit filtrer les données pour ne conserver que les lignes complètes et adapter le format des dates aux standards français. Enfin, le fichier final devra respecter des contraintes de codage spécifiques pour garantir sa parfaite lisibilité lors d'une ouverture sous Excel.</p>
+                                <p>Cette SAÉ demande de concevoir un script en Python pour traiter et nettoyer un jeu de données JSON sur la pollution de l'air à Poitiers. L'objectif principal est de transformer ce fichier initial pour l'export au format CSV en utilisant le point-virgule comme séparateur.</p>
                             </div>
                             <div class="project-arrow">
                                 <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
@@ -91,13 +85,12 @@
                         </div>
                     </div>
 
-                    <!-- SAÉ 2 : Création d’un reporting -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">02</span>
                             <div class="project-details">
                                 <h3>SAÉ : Création d’un reporting</h3>
-                                <p>Cette SAÉ impose de concevoir un outil de gestion des notes sur Excel doté d'une base de données structurée, de formulaires de saisie et d'un tableau de bord dynamique avec graphiques. L'application doit générer un guide d'utilisation et automatiser la décision du jury concernant le passage en deuxième année du BUT SD1 selon des règles de moyenne précises. Le projet sera évalué à parts égales sur la qualité technique du fichier (formules Excel et VBA optimisé) et sur une soutenance orale individuelle.</p>
+                                <p>Cette SAÉ impose de concevoir un outil de gestion des notes sur Excel doté d'une base de données structurée, de formulaires de saisie et d'un tableau de bord dynamique avec graphiques.</p>
                             </div>
                             <div class="project-arrow">
                                 <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
@@ -111,13 +104,39 @@
                         </div>
                     </div>
 
-                    <!-- SAÉ 3 : Statistiques inférentielles -->
-                    <div class="project-item toggle-project">
+                    <div class="project-item toggle-project" id="project-bdd-item">
                         <div class="project-header">
                             <span class="project-num">03</span>
                             <div class="project-details">
+                                <h3>SAÉ : Conception & Implémentation d’une BDD</h3>
+                                <p>Ce projet consiste à automatiser le nettoyage et l'intégration de données logistiques multi-sources (fichiers CSV de partenaires, livraisons, véhicules et tournées) vers un entrepôt de données MySQL. Le script Python assure la normalisation textuelle, le formatage des dates et la gestion des clés étrangères.</p>
+                            </div>
+                            <div class="project-arrow">
+                                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                            </div>
+                        </div>
+                        
+                        <div class="project-preview">
+                            <div class="code-container-wrapper">
+                                <div class="code-actions">
+                                    <a href="SAE BDD.py" target="_blank" rel="noopener noreferrer" class="btn-fullscreen">
+                                        <span>Voir le code brut</span>
+                                        <svg viewBox="0 0 24 24" class="fullscreen-icon"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                                    </a>
+                                </div>
+                                <div class="image-wrapper">
+                                    <pre><code class="python-code" id="code-bdd-preview">Chargement du script Python...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item toggle-project">
+                        <div class="project-header">
+                            <span class="project-num">04</span>
+                            <div class="project-details">
                                 <h3>SAÉ : Statistiques inférentielles</h3>
-                                <p>Cette SAÉ de statistiques inférentielles impose de rédiger un rapport (Word ou PDF) valorisant et commentant rigoureusement chaque ligne de code R et chaque résultat obtenu. L'étudiant doit d'abord estimer la population d'une région française par échantillonnage aléatoire simple puis stratifié, en comparant la précision de leurs intervalles de confiance à l'aide de graphiques Excel. Enfin, il doit traiter des données d'enquête dans R pour identifier, via des tests du khi-deux et le calcul du V de Cramer, des relations significatives entre la pratique du sport et d'autres variables qualitatives.</p>
+                                <p>Cette SAÉ de statistiques inférentielles impose de rédiger un rapport valorisant et commentant rigoureusement chaque ligne de code R et chaque résultat obtenu (estimations, intervalles de confiance et tests du khi-deux).</p>
                             </div>
                             <div class="project-arrow">
                                 <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
@@ -143,7 +162,6 @@
             </div>
         </section>
 
-        <!-- SECTION BILAN PERSONNEL -->
         <section id="bilan" class="section">
             <div class="container">
                 <h2 class="section-title">Bilan Personnel</h2>
@@ -151,7 +169,7 @@
                     <div class="main-profile">
                         <p class="lead-text">Ma première année en BUT Science des données à Niort a été une étape clé pour poser les fondations de mon profil technique. Entre la théorie des cours et la pratique des projets, cette année m'a permis de passer de la simple curiosité à la maîtrise de mes premiers outils d'analyse.</p>
                         <p style="margin-bottom: 1.8rem;">Sur le plan technique, j'ai développé des compétences en programmation et en manipulation de données, notamment à travers l'apprentissage de bases de données et de langages clés du secteur. Au-delà des chiffres, cette formation m'a appris à nettoyer, structurer et interpréter la donnée pour la rendre lisible et utile.</p>
-                        <p>Ce cursus m'a également poussé à développer mon autonomie et mon esprit d'équipe, notamment lors des SAÉ (Situations d'Apprentissage et d'Évaluation) où nous devions résoudre des problématiques concrètes en groupe, souvent sous forme de gestion de projet.</p>
+                        <p>Ce cursus m'a également poussé à développer mon autonomie et mon esprit d'équipe, notamment lors des SAÉ (Situations d'Apprentissage et d'Évaluation) où nous devions résoudre des problématiques concretes en groupe, souvent sous forme de gestion de projet.</p>
                     </div>
                     <div class="side-passion">
                         <p class="interest-title">// Conclusion & Perspectives</p>
@@ -161,12 +179,11 @@
             </div>
         </section>
 
-        <!-- SECTION CV -->
         <section id="cv" class="section">
             <div class="container cv-container">
-                <h2 class="section-title">Mon CV</h2>
-                <p class="cv-text">Téléchargez mon cv mis à jour.</p>
-                <a href="https://github.com/evancaillard/evancaillard.github.io/raw/main/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <p class="cv-text">Consultez ou téléchargez mon parcours académique et professionnel mis à jour.</p>
+                <a href="https://github.com/ton-pseudo/ton-pseudo.github.io/raw/main/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
                     <span>Télécharger le CV</span>
                     <svg viewBox="0 0 24 24" class="arrow-icon"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
                 </a>
