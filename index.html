@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan Caillard | Portfolio</title>
+    <!-- Chargement de la police Google Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -32,12 +33,14 @@
                 <li><a href="#projects" class="nav-link" data-target="projects">Projets</a></li>
                 <li><a href="#bilan" class="nav-link" data-target="bilan">Bilan Personnel</a></li>
                 <li><a href="#cv" class="nav-link" data-target="cv">CV</a></li>
+                <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="content-container">
 
+        <!-- SECTION ACCUEIL -->
         <section id="home" class="section active">
             <div class="hero-wrapper">
                 <h1 class="hero-title">Evan</h1>
@@ -45,6 +48,7 @@
             </div>
         </section>
 
+        <!-- SECTION À PROPOS -->
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">À propos de moi</h2>
@@ -61,11 +65,13 @@
             </div>
         </section>
 
+        <!-- SECTION PROJETS -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Projets</h2>
                 <div class="projects-list">
                     
+                    <!-- SAÉ 1 : Gestion de fichiers -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">01</span>
@@ -93,6 +99,7 @@
                         </div>
                     </div>
 
+                    <!-- SAÉ 2 : Création d’un reporting -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">02</span>
@@ -112,6 +119,7 @@
                         </div>
                     </div>
 
+                    <!-- SAÉ 3 : Conception et implémentation d’une base de données -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">03</span>
@@ -139,6 +147,7 @@
                         </div>
                     </div>
 
+                    <!-- SAÉ 4 : Statistiques inférentielles -->
                     <div class="project-item toggle-project">
                         <div class="project-header">
                             <span class="project-num">04</span>
@@ -170,6 +179,7 @@
             </div>
         </section>
 
+        <!-- SECTION BILAN PERSONNEL -->
         <section id="bilan" class="section">
             <div class="container">
                 <h2 class="section-title">Bilan Personnel</h2>
@@ -181,20 +191,51 @@
                     </div>
                     <div class="side-passion">
                         <p class="interest-title">// Conclusion & Perspectives</p>
-                        <p>Aujourd'hui, je dresse un bilan très positif de cette première année : elle a confirmed mon intérêt pour ce domaine et m'a donné toutes les clés nécessaires pour aborder la deuxième année avec ambition, notamment dans mes projets personnels liés à la data dans le football.</p>
+                        <p>Aujourd'hui, je dresse un bilan très positif de cette première année : elle a confirmé mon intérêt pour ce domaine et m'a donné toutes les clés nécessaires pour aborder la deuxième année avec ambition, notamment dans mes projets personnels liés à la data dans le football.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION CV -->
         <section id="cv" class="section">
             <div class="container cv-container">
-                <h2 class="section-title">CV</h2>
-                <p class="cv-text">Téléchargez mon cv mis à jour.</p>
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <p class="cv-text">Consultez ou téléchargez mon parcours académique et professionnel mis à jour.</p>
                 <a href="https://github.com/evancaillard/evancaillard.github.io/raw/main/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
                     <span>Télécharger le CV</span>
                     <svg viewBox="0 0 24 24" class="arrow-icon"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
                 </a>
+            </div>
+        </section>
+
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="section">
+            <div class="container contact-container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-grid">
+                    <div class="contact-methods">
+                        <!-- REMPLACE "xxx" PAR TON NUMÉRO (Ex: tel:+33612345678) -->
+                        <a href="tel:xxx" class="contact-link">
+                            <span class="contact-label">Téléphone</span>
+                            <span class="contact-value">06 47 58 63 59</span>
+                        </a>
+                        <!-- REMPLACE "xxx" PAR TON EMAIL (Ex: mailto:evan@example.com) -->
+                        <a href="mailto:xxx" class="contact-link">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">caillardevanx@gmail.com</span>
+                        </a>
+                    </div>
+                    <div class="contact-social">
+                        <!-- REMPLACE LE # PAR LE LIEN DE TON COMPTE LINKEDIN -->
+                        <a href="https://www.linkedin.com/in/evan-caillard-65845233b/" target="_blank" rel="noopener noreferrer" class="linkedin-btn" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" class="linkedin-icon">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+                            </svg>
+                            <span>Suivez-moi sur LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
