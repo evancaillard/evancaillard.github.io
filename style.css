@@ -1,10 +1,8 @@
 /* --- VARIABLES & FONTS --- */
 :root {
     --bg-color: #0a0a0a;
-    --text-color: #ffffff; /* Tout le texte principal en blanc */
-    --text-muted: #ffffff; /* Le texte secondaire passe aussi en blanc */
-    --font-serif: 'Cormorant Garamond', serif;
-    --font-sans: 'Inter', sans-serif;
+    --text-color: #ffffff; /* Tout blanc */
+    --font-sans: 'Inter', sans-serif; /* Police unique pour tout le site */
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -51,11 +49,12 @@ body {
 }
 
 .logo {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1.8rem;
     cursor: pointer;
-    font-weight: 300;
+    font-weight: 600;
     color: var(--text-color);
+    letter-spacing: -1px;
 }
 
 .nav-menu ul {
@@ -65,7 +64,7 @@ body {
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.6); /* Blanc semi-transparent par défaut pour le menu */
+    color: rgba(255, 255, 255, 0.5); /* Blanc estompé par défaut pour le contraste */
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -73,10 +72,11 @@ body {
     transition: var(--transition-smooth);
     position: relative;
     font-family: var(--font-sans);
+    font-weight: 400;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: var(--text-color); /* Blanc pur au survol/actif */
+    color: var(--text-color); /* Blanc pur */
 }
 
 .nav-link::after {
@@ -152,11 +152,12 @@ body {
 }
 
 .hero-title {
-    font-family: var(--font-serif);
-    font-size: 12vw;
-    font-weight: 300;
+    font-family: var(--font-sans);
+    font-size: 10vw;
+    font-weight: 600;
     line-height: 0.9;
     text-transform: uppercase;
+    letter-spacing: -3px;
     color: var(--text-color);
 }
 
@@ -164,20 +165,20 @@ body {
     font-family: var(--font-sans);
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 10px;
+    letter-spacing: 12px;
     color: var(--text-color);
     margin-top: 2rem;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
-/* --- DESIGN SECTION À PROPOS --- */
+/* --- TYPOGRAPHIE ET MISES EN PAGE DES SECTIONS --- */
 .section-title {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
-    font-weight: 300;
+    font-family: var(--font-sans);
+    font-size: 3rem;
+    font-weight: 600;
     margin-bottom: 3.5rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: -1px;
     color: var(--text-color);
 }
 
@@ -187,7 +188,7 @@ body {
     gap: 6rem;
 }
 
-/* Police et couleur unifiées pour tous les paragraphes de présentation */
+/* Style de ton texte de présentation */
 .main-profile .lead-text {
     font-family: var(--font-sans);
     color: var(--text-color);
@@ -206,13 +207,13 @@ body {
     font-weight: 300;
 }
 
-/* Style du sous-titre de droite en blanc également */
+/* Style de ton titre de droite // Passion & Curiosité */
 .interest-title {
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.5); /* Blanc semi-transparent pour le style "//" */
+    color: var(--text-color); /* Blanc pur */
     margin-bottom: 1.2rem;
     font-weight: 600;
 }
@@ -227,26 +228,27 @@ body {
 .project-item {
     display: flex;
     padding: 2.5rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
     transition: 0.6s;
 }
 
 .project-item:hover {
     padding-left: 1.5rem;
-    border-bottom-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,1);
 }
 
 .project-num {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-right: 4rem;
     color: var(--text-color);
 }
 
 .project-details h3 {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-color);
 }
@@ -255,6 +257,7 @@ body {
     font-family: var(--font-sans);
     color: var(--text-color);
     font-size: 0.95rem;
+    font-weight: 300;
 }
 
 /* --- CV STYLE --- */
@@ -267,6 +270,7 @@ body {
     color: var(--text-color);
     margin-bottom: 3rem;
     font-size: 1.1rem;
+    font-weight: 300;
 }
 
 .btn-cv {
@@ -274,7 +278,7 @@ body {
     align-items: center;
     gap: 15px;
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,1);
     color: var(--text-color);
     padding: 1.2rem 2.5rem;
     text-decoration: none;
@@ -284,6 +288,7 @@ body {
     border-radius: 50px;
     transition: 0.6s;
     font-family: var(--font-sans);
+    font-weight: 400;
 }
 
 .btn-cv:hover {
@@ -302,7 +307,8 @@ body {
     .header { padding: 2rem; }
     .section { padding: 8rem 2rem 2rem 2rem; }
     .grid-text { grid-template-columns: 1fr; gap: 3rem; }
-    .section-title { font-size: 2.8rem; margin-bottom: 2rem; }
+    .section-title { font-size: 2.5rem; margin-bottom: 2rem; }
+    .hero-title { font-size: 14vw; }
     
     .menu-toggle { display: flex; }
     .nav-menu {
