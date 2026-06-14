@@ -163,9 +163,10 @@ body {
 .hero-subtitle {
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 10px; /* Augmente l'espacement pour un style plus "luxe" */
+    letter-spacing: 10px; /* Espacement large style luxe */
     color: var(--text-muted);
     margin-top: 2rem;
+    padding-left: 10px; /* Aligne parfaitement le texte centré malgré le letter-spacing */
 }
 
 /* --- CONFIGURATION DES PAGES --- */
