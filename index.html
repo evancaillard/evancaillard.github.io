@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evan | Portfolio</title>
-    <!-- Google Fonts: Cormorant Garamond (Serif Luxe) & Inter (Sans-Serif) -->
+    <title>Evan Caillard | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Styles CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Custom Cursor (Subtile touche UI) -->
     <div class="custom-cursor"></div>
 
-    <!-- Navigation Header -->
     <header class="header">
         <div class="logo" data-target="home">E.</div>
         <button class="menu-toggle" aria-label="Ouvrir le menu">
@@ -34,10 +30,8 @@
         </nav>
     </header>
 
-    <!-- Main Content Container -->
     <main class="content-container">
 
-        <!-- 1. ACCUEIL -->
         <section id="home" class="section active">
             <div class="hero-wrapper">
                 <h1 class="hero-title">Evan</h1>
@@ -45,18 +39,22 @@
             </div>
         </section>
 
-        <!-- 2. À PROPOS -->
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">À propos de moi</h2>
                 <div class="grid-text">
-                    <p class="lead-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="main-profile">
+                        <p class="lead-text">Je m'appelle Evan Caillard et je suis actuellement en première année de BUT Science des données à Niort.</p>
+                        <p>Orienté vers l'analyse et la compréhension des données, j'aborde chaque projet avec la volonté d'allier rigueur technique et créativité afin de proposer des solutions simples et performantes. Ce portfolio retrace mes premiers travaux d'études ainsi que mes expérimentations personnelles, qui me permettent d'enrichir quotidiennement mes compétences.</p>
+                    </div>
+                    <div class="side-passion">
+                        <p class="interest-title">// Passion & Curiosité</p>
+                        <p>En dehors de mes études, je développe ma curiosité et mon sens du détail à travers la pratique de l’analyse de données dans le monde du football.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. PROJETS -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Projets</h2>
@@ -79,7 +77,6 @@
             </div>
         </section>
 
-        <!-- 4. BILAN PERSONNEL -->
         <section id="bilan" class="section">
             <div class="container">
                 <h2 class="section-title">Bilan Personnel</h2>
@@ -90,12 +87,10 @@
             </div>
         </section>
 
-        <!-- 5. CV -->
         <section id="cv" class="section">
             <div class="container cv-container">
                 <h2 class="section-title">Curriculum Vitae</h2>
                 <p class="cv-text">Consultez ou téléchargez mon parcours académique et professionnel mis à jour.</p>
-                
                 <a href="https://github.com/ton-pseudo/ton-pseudo.github.io/raw/main/cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
                     <span>Télécharger le CV</span>
                     <svg viewBox="0 0 24 24" class="arrow-icon"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
@@ -105,9 +100,7 @@
 
     </main>
 
-    <!-- GSAP (Pour les animations fluides haut de gamme) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <!-- Script JS principal -->
     <script src="script.js"></script>
 </body>
 </html>
