@@ -163,7 +163,7 @@ body {
 .hero-subtitle {
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 10px; /* Augmente l'espacement pour un style plus "luxe" */
     color: var(--text-muted);
     margin-top: 2rem;
 }
