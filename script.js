@@ -43,8 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectItems = document.querySelectorAll(".toggle-project");
     projectItems.forEach(item => {
         item.addEventListener("click", (e) => {
-            // Ne ferme pas l'accordéon si on clique directement sur l'iframe du PDF
-            if (e.target.tagName === 'A' || e.target.tagName === 'IFRAME') return;
+            // Empêche la fermeture involontaire si on clique sur le bouton plein écran ou l'iframe
+            if (e.target.closest('.btn-fullscreen') || e.target.tagName === 'A' || e.target.tagName === 'IFRAME') {
+                return;
+            }
 
             if (item.classList.contains("open")) {
                 item.classList.remove("open");
