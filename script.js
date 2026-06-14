@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. SECTIONS ET TRANSITIONS DE PAGES (SPA) ---
     const links = document.querySelectorAll(".nav-link, .logo");
     links.forEach(link => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
             const targetId = link.getAttribute("data-target");
             const targetSection = document.getElementById(targetId);
+            
             if (!targetSection.classList.contains("active")) {
                 const currentSection = document.querySelector(".section.active");
                 gsap.to(currentSection, { opacity: 0, y: -20, duration: 0.4, onComplete: () => {
@@ -20,10 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // --- 2. GESTION DU MENU MOBILE ---
     document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".nav-menu").classList.toggle("open");
     });
 
+    // --- 3. LOGIQUE DU CURSEUR PERSONNALISÉ ---
     const cursor = document.querySelector(".custom-cursor");
     document.addEventListener("mousemove", (e) => {
         gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
@@ -32,5 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("a, button, .logo, .project-item").forEach(el => {
         el.addEventListener("mouseenter", () => { cursor.style.width = "40px"; cursor.style.height = "40px"; });
         el.addEventListener("mouseleave", () => { cursor.style.width = "8px"; cursor.style.height = "8px"; });
+    });
+
+    // --- 4. ACCORDÉON INTERACTIF (PROJETS / SAÉ) ---
+    const projectItems = document.querySelectorAll(".toggle-project");
+    projectItems.forEach(item => {
+        item.addEventListener("click", (e) => {
+            // Ne fait rien si l'utilisateur clique sur un lien direct
+            if (e.target.tagName === 'A') return;
+
+            if (item.classList.contains("open")) {
+                item.classList.remove("open");
+            } else {
+                // Ferme l'autre volet si ouvert, puis affiche l'actuel
+                projectItems.forEach(otherItem => otherItem.classList.remove("open"));
+                item.classList.add("open");
+            }
+        });
     });
 });
