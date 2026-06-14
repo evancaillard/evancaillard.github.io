@@ -10,7 +10,6 @@
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --- THEME CLAIR --- */
 body.light-theme {
     --bg-color: #ffffff;
     --text-color: #0a0a0a;
@@ -78,7 +77,6 @@ body {
     letter-spacing: -1px;
 }
 
-/* BOUTON SWITCH THÈME */
 .theme-toggle {
     background: none;
     border: none;
@@ -105,7 +103,6 @@ body {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Gestion de l'affichage des icônes Lune/Soleil */
 body.light-theme .sun-icon { opacity: 0; transform: rotate(90deg); }
 body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
 
@@ -146,7 +143,6 @@ body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
     width: 100%;
 }
 
-/* Menu Mobile Toggle */
 .menu-toggle {
     display: none;
     background: none;
@@ -163,7 +159,7 @@ body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
     background-color: var(--text-color);
 }
 
-/* --- INTERFACE SECTIONS (SPA) --- */
+/* --- SECTIONS (SPA) --- */
 .content-container {
     position: relative;
     width: 100%;
@@ -196,7 +192,7 @@ body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
     margin: 0 auto;
 }
 
-/* --- ACCUEIL (HERO) --- */
+/* --- ACCUEIL --- */
 #home {
     justify-content: center;
     align-items: center;
@@ -223,7 +219,7 @@ body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
     padding-left: 12px;
 }
 
-/* --- DISPOSITION GLOBALE ET TEXTES CONTENU --- */
+/* --- TEXTES ET GRIDS --- */
 .section-title {
     font-family: var(--font-sans);
     font-size: 3rem;
@@ -268,7 +264,7 @@ body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
     font-weight: 600;
 }
 
-/* --- PROJETS STYLE (ACCORDÉON INTERACTIF) --- */
+/* --- ACCORDÉONS PROJETS --- */
 .projects-list {
     display: flex;
     flex-direction: column;
@@ -352,20 +348,20 @@ body:not(.light-theme) .moon-icon { opacity: 0; transform: rotate(-90deg); }
 }
 
 .project-item.open .project-preview {
-    max-height: 850px;
+    max-height: 950px;
     opacity: 1;
     visibility: visible;
     padding-bottom: 3rem;
 }
 
-/* --- STRUCTURE PDF ET BOUTONS CONFIGURÉS --- */
-.pdf-container-wrapper {
+/* --- WRAPPERS ACTIONS & EMBEDS --- */
+.pdf-container-wrapper, .code-container-wrapper {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
 }
 
-.pdf-actions {
+.pdf-actions, .code-actions {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -427,7 +423,20 @@ body.light-theme .image-wrapper {
     border: none;
 }
 
-/* --- CV STYLE --- */
+/* --- STYLE CODE BLOC PYTHON --- */
+.python-code {
+    display: block;
+    padding: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    white-space: pre;
+    overflow-x: auto;
+    max-height: 450px;
+}
+
+/* --- SECTION CV --- */
 .cv-container {
     text-align: center;
 }
@@ -469,7 +478,7 @@ body.light-theme .image-wrapper {
     fill: currentColor;
 }
 
-/* --- RESPONSIVE --- */
+/* --- MEDIA QUERIES RESPONSIVE --- */
 @media (max-width: 992px) {
     .header { padding: 2rem; }
     .header-left { gap: 1rem; }
